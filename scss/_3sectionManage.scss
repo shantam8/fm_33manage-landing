@@ -1,0 +1,35 @@
+#manage {
+  .bgHelper {
+    .titleBox {
+      padding: 2rem;
+      text-align: center;
+
+      h2 {
+        padding: 0 2rem;
+      }
+      p {
+        margin-top: 0.5rem;
+      }
+    }
+
+    .itemBox {
+      padding: 1rem;
+
+      .itemNr {
+        text-align: center;
+        font-weight: 700;
+        color: white;
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        border-radius: 32px;
+        background-color: $brightRed;
+      }
+
+      h3{
+          display: inline-block;
+          padding: 0.5rem 0 0.5rem 0.3rem;
+          background-color: $veryPaleRed;
+      }
+    }
+  }
+}

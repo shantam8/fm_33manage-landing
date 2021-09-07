@@ -1,0 +1,92 @@
+@import "colors";
+@import "fonts";
+@import "keyframes";
+@import "mixins";
+
+@import "1header";
+@import "2sectionIntro";
+@import "3sectionManage";
+@import "4sectionTestimonials";
+@import "5sectionGetStarted";
+@import "6footer";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+button,
+input {
+  font-family: "Be Vietnam", sans-serif; // 4 5 7
+}
+
+h1, h2, h3{
+    color: $darkBlue;
+    font-weight: 700;
+}
+h1{
+    line-height: 3rem;
+    
+}
+
+
+
+p {
+  color: $darkGrayishBlue;
+  line-height: 24px;
+  font-size: 0.9rem;
+}
+
+ul {
+  list-style: none;
+  a {
+    text-decoration: none;
+  }
+}
+
+.displayNone {
+  display: none;
+}
+
+.btnGetStarted {
+  padding: 0.5rem 1.5rem;
+  background-color: $brightRed;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  font-weight: 700;
+  box-shadow: 1px 1px 10px 0px $brightRed;
+}
+
+body {
+  position: relative;
+
+  #modalBodyBG {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to Bottom, $varyLightGray, $veryDarkBlue);
+    opacity: 0.7;
+    z-index: 2;
+
+    &.openModalBG {
+      animation: fadeInBodyBG 2s forwards;
+    }
+    &.closeModalBG {
+      animation: fadeOutBodyBG 2s forwards;
+    }
+  }
+
+  &.overflowHidden {
+    overflow: hidden;
+  }
+}

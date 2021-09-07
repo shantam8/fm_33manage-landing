@@ -1,0 +1,61 @@
+header {
+  .bgHelper {
+    @include sectionPadding;
+    display: flex;
+    justify-content: space-between;
+    align-items: middle;
+    position: relative;
+
+    .logo {
+      position: relative;
+      z-index: 10;
+    }
+
+    #iconMobileMenu {
+      position: relative;
+      width: 24px;
+      height: 24px;
+      background-image: url("../images/icon-hamburger.svg");
+      background-size: cover;
+      z-index: 10;
+    }
+
+    nav {
+      position: absolute;
+      top: 7rem;
+      left: 2rem;
+      right: 2rem;
+      text-align: center;
+
+      background-color: white;
+      border-radius: 4px;
+      z-index: 10;
+
+      li {
+        margin: 1rem 0;
+        padding: 1rem;
+
+        a {
+          display: inline-block;
+          height: 100%;
+          width: 100%;
+
+          color: $veryDarkBlue;
+          font-weight: 700;
+        }
+      }
+
+      &.close {
+        animation: fadeOut 2s forwards;
+      }
+
+      &.open {
+        animation: fadeIn 2s forwards;
+      }
+    }
+
+    .btnGetStarted {
+      display: none;
+    }
+  }
+}
