@@ -1,4 +1,57 @@
-@mixin sectionPadding(){
-    padding: 2rem;
+@mixin sectionPadding() {
+  padding: 2rem;
 }
 
+@mixin btnGeneralStyle($color: white, $bgColor: $brightRed) {
+  padding: 0.8rem 2.2rem;
+  background-color: $bgColor;
+  color: $color;
+  border: none;
+  border-radius: 26px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 1px 1px 10px 0px $bgColor;
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    box-shadow: 1px 1px 15px 5px $bgColor;
+    outline: none;
+  }
+
+  &:active {
+    @if ($color == "white") {
+      background-color: lighten($bgColor, $amount: 10);
+    } @else {
+      color: lighten($darkBlue, $amount: 10);
+    }
+    box-shadow: 1px 1px 15px 5px lighten($bgColor, $amount: 10);
+  }
+}
+
+@mixin footerHoverEffects{
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover,
+    &:focus{
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
+    &:active{
+        a{
+            
+            transition: all 0.2s ease-in-out;
+            color: $brightRed;
+        }
+
+        svg path{
+            transition: all 0.2s ease-in-out;
+            fill :$brightRed;
+        }
+    }
+
+
+}

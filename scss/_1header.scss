@@ -15,6 +15,7 @@ header {
       position: relative;
       width: 24px;
       height: 24px;
+      background-color: transparent;
       background-image: url("../images/icon-hamburger.svg");
       background-size: cover;
       z-index: 10;
@@ -27,7 +28,6 @@ header {
       left: 2rem;
       right: 2rem;
       text-align: center;
-
       background-color: white;
       border-radius: 4px;
       z-index: 10;
@@ -35,7 +35,7 @@ header {
       li {
         margin: 1rem 0;
         padding: 1rem;
-
+        transition: all 0.3s ease-in-out;
         a {
           display: inline-block;
           height: 100%;
@@ -43,6 +43,15 @@ header {
 
           color: $veryDarkBlue;
           font-weight: 700;
+        }
+
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          background-color: lighten($brightRed, $amount: 10);
+        }
+        &:active {
+          background-color: $brightRed;
         }
       }
 

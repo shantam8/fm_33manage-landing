@@ -19,8 +19,9 @@
 
     button {
         margin-top: 2rem;
-      color: $brightRed;
-      background-color: white;
+
+        @include btnGeneralStyle($brightRed, white)
+
     }
   }
 }

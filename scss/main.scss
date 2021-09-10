@@ -22,7 +22,8 @@ h3,
 p,
 a,
 button,
-input {
+input,
+::after {
   font-family: "Be Vietnam", sans-serif; // 4 5 7
 }
 
@@ -53,15 +54,8 @@ ul {
   display: none;
 }
 
-.btnGeneralStyle {
-  padding: 0.8rem 2.2rem;
-  background-color: $brightRed;
-  color: white;
-  border: none;
-  border-radius: 26px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  box-shadow: 1px 1px 10px 0px $brightRed;
+.btnGeneralStyle{
+  @include btnGeneralStyle;
 }
 
 body {

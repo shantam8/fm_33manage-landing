@@ -141,6 +141,7 @@ header .bgHelper #btnMobileMenu {
   position: relative;
   width: 24px;
   height: 24px;
+  background-color: transparent;
   background-image: url("../images/icon-hamburger.svg");
   background-size: cover;
   z-index: 10;
@@ -161,6 +162,8 @@ header .bgHelper nav {
 header .bgHelper nav li {
   margin: 1rem 0;
   padding: 1rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 header .bgHelper nav li a {
@@ -169,6 +172,15 @@ header .bgHelper nav li a {
   width: 100%;
   color: #1d1e25;
   font-weight: 700;
+}
+
+header .bgHelper nav li:hover, header .bgHelper nav li:focus {
+  cursor: pointer;
+  background-color: #f6866a;
+}
+
+header .bgHelper nav li:active {
+  background-color: #f25f3a;
 }
 
 header .bgHelper nav.close {
@@ -276,10 +288,13 @@ header .bgHelper .btnGeneralStyle {
 
 #testimonials .bgHelper .card {
   position: relative;
+  height: 280px;
   border-radius: 8px;
   background-color: #fafafa;
   margin-top: 4rem;
-  padding: 0 1rem 2rem 1rem;
+  padding: 0 1rem;
+  -webkit-animation: fadeIn 2s forwards ease-in-out;
+          animation: fadeIn 2s forwards ease-in-out;
 }
 
 #testimonials .bgHelper .card .avatar {
@@ -311,6 +326,14 @@ header .bgHelper .btnGeneralStyle {
   border: 2px solid #f25f3a;
 }
 
+#testimonials .bgHelper #testimonialNavBlock ul li.bgColorBrightRed {
+  background-color: #f25f3a;
+}
+
+#testimonials .bgHelper #testimonialNavBlock ul li:hover {
+  cursor: pointer;
+}
+
 #testimonials .bgHelper button {
   margin-bottom: 2rem;
 }
@@ -336,8 +359,30 @@ header .bgHelper .btnGeneralStyle {
 
 #getStarted .bgHelper button {
   margin-top: 2rem;
-  color: #f25f3a;
+  padding: 0.8rem 2.2rem;
   background-color: white;
+  color: #f25f3a;
+  border: none;
+  border-radius: 26px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  -webkit-box-shadow: 1px 1px 10px 0px white;
+          box-shadow: 1px 1px 10px 0px white;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#getStarted .bgHelper button:hover, #getStarted .bgHelper button:focus {
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 15px 5px white;
+          box-shadow: 1px 1px 15px 5px white;
+  outline: none;
+}
+
+#getStarted .bgHelper button:active {
+  color: #334075;
+  -webkit-box-shadow: 1px 1px 15px 5px white;
+          box-shadow: 1px 1px 15px 5px white;
 }
 
 footer {
@@ -362,6 +407,26 @@ footer .bgHelper {
 
 footer .bgHelper nav ul li {
   padding: 0.3rem 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+footer .bgHelper nav ul li:hover, footer .bgHelper nav ul li:focus {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+footer .bgHelper nav ul li:active a {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #f25f3a;
+}
+
+footer .bgHelper nav ul li:active svg path {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  fill: #f25f3a;
 }
 
 footer .bgHelper nav ul li a {
@@ -402,6 +467,7 @@ footer .bgHelper form {
   -ms-grid-column-span: 2;
   grid-area: mail;
   width: 100%;
+  position: relative;
 }
 
 footer .bgHelper form #inputBoxMail {
@@ -410,6 +476,25 @@ footer .bgHelper form #inputBoxMail {
   border-radius: 26px;
   border: none;
   width: 14.9rem;
+}
+
+footer .bgHelper form.valid #inputBoxMail {
+  outline: 2px solid lightgreen;
+}
+
+footer .bgHelper form.error #inputBoxMail {
+  outline: 2px solid #f25f3a;
+  color: #f25f3a;
+}
+
+footer .bgHelper form.error::after {
+  position: absolute;
+  content: "Please enter a valid e-mail.";
+  top: 3rem;
+  left: 0;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+  color: #f25f3a;
 }
 
 footer .bgHelper form #btnSubmitForm {
@@ -422,9 +507,6 @@ footer .bgHelper #socialMediaBox {
   -ms-grid-column-span: 2;
   grid-area: socialMedia;
   width: 100%;
-}
-
-footer .bgHelper #socialMediaBox ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -436,12 +518,32 @@ footer .bgHelper #socialMediaBox ul {
           align-items: center;
 }
 
-footer .bgHelper #socialMediaBox ul li {
+footer .bgHelper #socialMediaBox a {
   width: 30px;
   height: 30px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-footer .bgHelper #socialMediaBox ul li svg {
+footer .bgHelper #socialMediaBox a:hover, footer .bgHelper #socialMediaBox a:focus {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+footer .bgHelper #socialMediaBox a:active a {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #f25f3a;
+}
+
+footer .bgHelper #socialMediaBox a:active svg path {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  fill: #f25f3a;
+}
+
+footer .bgHelper #socialMediaBox a svg {
   width: 100%;
   height: 100%;
 }
@@ -466,7 +568,8 @@ h3,
 p,
 a,
 button,
-input {
+input,
+::after {
   font-family: "Be Vietnam", sans-serif;
 }
 
@@ -509,6 +612,21 @@ ul a {
   font-weight: 700;
   -webkit-box-shadow: 1px 1px 10px 0px #f25f3a;
           box-shadow: 1px 1px 10px 0px #f25f3a;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnGeneralStyle:hover, .btnGeneralStyle:focus {
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 15px 5px #f25f3a;
+          box-shadow: 1px 1px 15px 5px #f25f3a;
+  outline: none;
+}
+
+.btnGeneralStyle:active {
+  color: #334075;
+  -webkit-box-shadow: 1px 1px 15px 5px #f6866a;
+          box-shadow: 1px 1px 15px 5px #f6866a;
 }
 
 body {
