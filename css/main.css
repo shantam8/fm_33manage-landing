@@ -137,13 +137,14 @@ header .bgHelper .logo {
   z-index: 10;
 }
 
-header .bgHelper #iconMobileMenu {
+header .bgHelper #btnMobileMenu {
   position: relative;
   width: 24px;
   height: 24px;
   background-image: url("../images/icon-hamburger.svg");
   background-size: cover;
   z-index: 10;
+  border: none;
 }
 
 header .bgHelper nav {
@@ -180,7 +181,7 @@ header .bgHelper nav.open {
           animation: fadeIn 2s forwards;
 }
 
-header .bgHelper .btnGetStarted {
+header .bgHelper .btnGeneralStyle {
   display: none;
 }
 
@@ -233,23 +234,223 @@ header .bgHelper .btnGetStarted {
 }
 
 #manage .bgHelper .itemBox {
+  position: relative;
   padding: 1rem;
 }
 
+#manage .bgHelper .itemBox p {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
 #manage .bgHelper .itemBox .itemNr {
-  text-align: center;
-  font-weight: 700;
-  color: white;
   display: inline-block;
+  position: absolute;
+  margin: 0;
   padding: 0.5rem 1.5rem;
+  color: white;
   border-radius: 32px;
   background-color: #f25f3a;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 #manage .bgHelper .itemBox h3 {
+  width: 100vw;
   display: inline-block;
-  padding: 0.5rem 0 0.5rem 0.3rem;
+  margin-left: 1rem;
+  padding: 0.5rem 0 0.5rem 4rem;
   background-color: #ffefeb;
+  font-size: 1rem;
+}
+
+#testimonials .bgHelper {
+  padding: 2rem;
+  text-align: center;
+}
+
+#testimonials .bgHelper h2 {
+  margin-bottom: 3rem;
+}
+
+#testimonials .bgHelper .card {
+  position: relative;
+  border-radius: 8px;
+  background-color: #fafafa;
+  margin-top: 4rem;
+  padding: 0 1rem 2rem 1rem;
+}
+
+#testimonials .bgHelper .card .avatar {
+  position: absolute;
+  width: 75px;
+  -webkit-transform: translate(150%, -2rem);
+          transform: translate(150%, -2rem);
+}
+
+#testimonials .bgHelper .card .avatar img {
+  width: 100%;
+}
+
+#testimonials .bgHelper .card h3 {
+  padding-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+#testimonials .bgHelper #testimonialNavBlock {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+#testimonials .bgHelper #testimonialNavBlock ul li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  border: 2px solid #f25f3a;
+}
+
+#testimonials .bgHelper button {
+  margin-bottom: 2rem;
+}
+
+#getStarted {
+  background-color: #f25f3a;
+  background-image: url("../images/bg-simplify-section-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+#getStarted .bgHelper {
+  padding: 2rem;
+  text-align: center;
+  padding: 6.5rem 0;
+}
+
+#getStarted .bgHelper h1 {
+  padding: 0 2rem;
+  color: white;
+  font-size: 2.3rem;
+}
+
+#getStarted .bgHelper button {
+  margin-top: 2rem;
+  color: #f25f3a;
+  background-color: white;
+}
+
+footer {
+  background-color: #1d1e25;
+}
+
+footer .bgHelper {
+  padding: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 2fr (auto)[3];
+      grid-template-rows: 1fr 2fr repeat(3, auto);
+      grid-template-areas: "mail mail" "navbar1 navbar2" "socialMedia socialMedia" "logo logo" "copyright copyright";
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+footer .bgHelper nav ul li {
+  padding: 0.3rem 0;
+}
+
+footer .bgHelper nav ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+footer .bgHelper nav:nth-child(1) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: navbar1;
+}
+
+footer .bgHelper nav:nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: navbar2;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+}
+
+footer .bgHelper #logo {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: logo;
+}
+
+footer .bgHelper #logo #textColor {
+  fill: white;
+}
+
+footer .bgHelper form {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: mail;
+  width: 100%;
+}
+
+footer .bgHelper form #inputBoxMail {
+  padding: 0.8rem 1.4rem;
+  font-size: 0.9rem;
+  border-radius: 26px;
+  border: none;
+  width: 14.9rem;
+}
+
+footer .bgHelper form #btnSubmitForm {
+  padding: 0.8rem 1.5rem;
+}
+
+footer .bgHelper #socialMediaBox {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: socialMedia;
+  width: 100%;
+}
+
+footer .bgHelper #socialMediaBox ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .bgHelper #socialMediaBox ul li {
+  width: 30px;
+  height: 30px;
+}
+
+footer .bgHelper #socialMediaBox ul li svg {
+  width: 100%;
+  height: 100%;
+}
+
+footer .bgHelper #copyright {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: copyright;
 }
 
 * {
@@ -269,7 +470,9 @@ input {
   font-family: "Be Vietnam", sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #242d52;
   font-weight: 700;
 }
@@ -296,12 +499,13 @@ ul a {
   display: none;
 }
 
-.btnGetStarted {
-  padding: 0.5rem 1.5rem;
+.btnGeneralStyle {
+  padding: 0.8rem 2.2rem;
   background-color: #f25f3a;
   color: white;
   border: none;
-  border-radius: 18px;
+  border-radius: 26px;
+  font-size: 0.9rem;
   font-weight: 700;
   -webkit-box-shadow: 1px 1px 10px 0px #f25f3a;
           box-shadow: 1px 1px 10px 0px #f25f3a;

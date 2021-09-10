@@ -1,0 +1,26 @@
+#getStarted {
+  background-color: $brightRed;
+  background-image: url("../images/bg-simplify-section-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+
+  .bgHelper {
+    @include sectionPadding;
+    text-align: center;
+    padding: 6.5rem 0;
+   
+    h1 {
+        padding: 0 2rem;
+      color: white;
+      font-size: 2.3rem
+      ;
+      
+    }
+
+    button {
+        margin-top: 2rem;
+      color: $brightRed;
+      background-color: white;
+    }
+  }
+}

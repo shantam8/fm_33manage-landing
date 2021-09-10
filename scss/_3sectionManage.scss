@@ -13,22 +13,33 @@
     }
 
     .itemBox {
+      position: relative;
       padding: 1rem;
 
+      p {
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+      }
       .itemNr {
-        text-align: center;
-        font-weight: 700;
-        color: white;
         display: inline-block;
+        position: absolute;
+        margin: 0;
         padding: 0.5rem 1.5rem;
+        color: white;
         border-radius: 32px;
         background-color: $brightRed;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 700;
       }
 
-      h3{
-          display: inline-block;
-          padding: 0.5rem 0 0.5rem 0.3rem;
-          background-color: $veryPaleRed;
+      h3 {
+        width: 100vw;
+        display: inline-block;
+        margin-left: 1rem;
+        padding: 0.5rem 0 0.5rem 4rem;
+        background-color: $veryPaleRed;
+        font-size: 1rem;
       }
     }
   }

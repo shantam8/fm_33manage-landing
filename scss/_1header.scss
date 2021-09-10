@@ -11,13 +11,14 @@ header {
       z-index: 10;
     }
 
-    #iconMobileMenu {
+    #btnMobileMenu {
       position: relative;
       width: 24px;
       height: 24px;
       background-image: url("../images/icon-hamburger.svg");
       background-size: cover;
       z-index: 10;
+      border: none;
     }
 
     nav {
@@ -54,7 +55,7 @@ header {
       }
     }
 
-    .btnGetStarted {
+    .btnGeneralStyle {
       display: none;
     }
   }

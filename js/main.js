@@ -1,4 +1,4 @@
-let btnToggleMobileMenu = document.querySelector("#iconMobileMenu");
+let btnToggleMobileMenu = document.querySelector("#btnMobileMenu");
 let mainNavBar = document.querySelector("#mainNavBar");
 let body = document.querySelector("body");
 let modalBodyBG = document.querySelector("#modalBodyBG");
