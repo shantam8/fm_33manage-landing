@@ -50,7 +50,6 @@ footer {
 
     form {
       grid-area: mail;
-      width: 100%;
       position: relative;
 
       #inputBoxMail {
@@ -88,7 +87,7 @@ footer {
 
     #socialMediaBox {
       grid-area: socialMedia;
-      width: 100%;
+      width: 310px;
       display: flex;
       justify-content: space-between;
       align-items: center;

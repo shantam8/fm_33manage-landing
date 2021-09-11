@@ -5,16 +5,21 @@
   background-position: left center;
 
   .bgHelper {
-    @include sectionPadding;
+    //@include sectionPadding;
     text-align: center;
     padding: 6.5rem 0;
+
+    @media screen and (min-width:40rem) {
+      padding: 5rem 0;
+    }
    
     h1 {
         padding: 0 2rem;
       color: white;
-      font-size: 2.3rem
-      ;
-      
+      font-size: 2.3rem;
+      @media screen and (min-width:40rem) {
+        margin-bottom: 2rem;
+      }
     }
 
     button {

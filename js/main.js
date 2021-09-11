@@ -59,10 +59,10 @@ function startTestimonialSlider(startElement = 0) {
 
   selectTestimonial(counter);
 
-  testimonialSliderInterval = setInterval(() => {
-    counter < testimonials.length - 1 ? counter++ : (counter = 0);
-    selectTestimonial(counter);
-  }, 10000);
+  // testimonialSliderInterval = setInterval(() => {
+  //   counter < testimonials.length - 1 ? counter++ : (counter = 0);
+  //   selectTestimonial(counter);
+  // }, 10000);
 }
 
 function selectTestimonial(counter) {

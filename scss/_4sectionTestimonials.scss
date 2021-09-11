@@ -9,7 +9,7 @@
 
     .card {
       position: relative;
-      height: 280px;
+      height: 230px;
       border-radius: 8px;
       background-color: $veryLightGray;
       margin-top: 4rem;
@@ -17,16 +17,15 @@
       animation: fadeIn 2s forwards ease-in-out;
 
       .avatar {
-        position: absolute;
-
+        margin: 0 auto;
         width: 75px;
-        transform: translate(150%, -2rem);
+        transform: translate(0, -2rem);
+
         img {
           width: 100%;
         }
       }
       h3 {
-        padding-top: 4rem;
         margin-bottom: 1.5rem;
       }
     }

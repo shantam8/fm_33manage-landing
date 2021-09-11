@@ -54,33 +54,73 @@ ul {
   display: none;
 }
 
-.btnGeneralStyle{
+.btnGeneralStyle {
   @include btnGeneralStyle;
 }
 
 body {
   position: relative;
 
-  #modalBodyBG {
+  &::before,
+  &::after {
     position: absolute;
     content: "";
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: linear-gradient(to Bottom, $veryLightGray, $veryDarkBlue);
-    opacity: 0.7;
-    z-index: 2;
-
-    &.openModalBG {
-      animation: fadeInBodyBG 2s forwards;
-    }
-    &.closeModalBG {
-      animation: fadeOutBodyBG 2s forwards;
-    }
+    background-image: url("../images/bg-tablet-pattern.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
+  &::before {
+    top: -3rem;
+    right: -5rem;
+    width: 25rem;
+    height: 25rem;
+    z-index: -1;
+  }
+
+  &::after {
+    top: 29rem;
+    right: -12rem;
+    width: 20rem;
+    height: 20rem;
+    z-index: -1;
+  }
   &.overflowHidden {
     overflow: hidden;
+  }
+
+  @media screen and (min-width: 40rem) {
+    &::before {
+      top: -3rem;
+      right: -2rem;
+      width: 35rem;
+      height: 35rem;
+    }
+
+    &::after {
+      top: 33rem;
+      right: -8rem;
+      width: 25rem;
+      height: 25rem;
+    }
+  }
+}
+
+#modalBodyBG {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to Bottom, $veryLightGray, $veryDarkBlue);
+  opacity: 0.7;
+  z-index: 2;
+
+  &.openModalBG {
+    animation: fadeInBodyBG 2s forwards;
+  }
+  &.closeModalBG {
+    animation: fadeOutBodyBG 2s forwards;
   }
 }

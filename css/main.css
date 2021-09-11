@@ -132,6 +132,24 @@ header .bgHelper {
   position: relative;
 }
 
+@media screen and (min-width: 30rem) {
+  header .bgHelper {
+    padding: 2rem 3rem;
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  header .bgHelper {
+    padding: 3rem 4rem;
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  header .bgHelper {
+    padding: 3rem 5rem;
+  }
+}
+
 header .bgHelper .logo {
   position: relative;
   z-index: 10;
@@ -215,6 +233,24 @@ header .bgHelper .btnGeneralStyle {
           align-items: center;
 }
 
+@media screen and (min-width: 30rem) {
+  #intro .bgHelper {
+    padding: 2rem 3rem;
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  #intro .bgHelper {
+    padding: 3rem 4rem;
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  #intro .bgHelper {
+    padding: 3rem 5rem;
+  }
+}
+
 #intro .bgHelper .imageBox {
   width: 100%;
 }
@@ -229,7 +265,11 @@ header .bgHelper .btnGeneralStyle {
 
 #intro .bgHelper p {
   margin-top: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+#manage .bgHelper {
+  padding-top: 2rem;
 }
 
 #manage .bgHelper .titleBox {
@@ -243,6 +283,13 @@ header .bgHelper .btnGeneralStyle {
 
 #manage .bgHelper .titleBox p {
   margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 30rem) {
+  #manage .bgHelper .titleBox {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
 #manage .bgHelper .itemBox {
@@ -277,9 +324,41 @@ header .bgHelper .btnGeneralStyle {
   font-size: 1rem;
 }
 
+@media screen and (min-width: 30rem) {
+  #manage .bgHelper {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  #manage .bgHelper {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
 #testimonials .bgHelper {
   padding: 2rem;
   text-align: center;
+}
+
+@media screen and (min-width: 30rem) {
+  #testimonials .bgHelper {
+    padding: 2rem 3rem;
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  #testimonials .bgHelper {
+    padding: 3rem 4rem;
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  #testimonials .bgHelper {
+    padding: 3rem 5rem;
+  }
 }
 
 #testimonials .bgHelper h2 {
@@ -288,7 +367,7 @@ header .bgHelper .btnGeneralStyle {
 
 #testimonials .bgHelper .card {
   position: relative;
-  height: 280px;
+  height: 230px;
   border-radius: 8px;
   background-color: #fafafa;
   margin-top: 4rem;
@@ -298,10 +377,10 @@ header .bgHelper .btnGeneralStyle {
 }
 
 #testimonials .bgHelper .card .avatar {
-  position: absolute;
+  margin: 0 auto;
   width: 75px;
-  -webkit-transform: translate(150%, -2rem);
-          transform: translate(150%, -2rem);
+  -webkit-transform: translate(0, -2rem);
+          transform: translate(0, -2rem);
 }
 
 #testimonials .bgHelper .card .avatar img {
@@ -309,7 +388,6 @@ header .bgHelper .btnGeneralStyle {
 }
 
 #testimonials .bgHelper .card h3 {
-  padding-top: 4rem;
   margin-bottom: 1.5rem;
 }
 
@@ -346,15 +424,26 @@ header .bgHelper .btnGeneralStyle {
 }
 
 #getStarted .bgHelper {
-  padding: 2rem;
   text-align: center;
   padding: 6.5rem 0;
+}
+
+@media screen and (min-width: 40rem) {
+  #getStarted .bgHelper {
+    padding: 5rem 0;
+  }
 }
 
 #getStarted .bgHelper h1 {
   padding: 0 2rem;
   color: white;
   font-size: 2.3rem;
+}
+
+@media screen and (min-width: 40rem) {
+  #getStarted .bgHelper h1 {
+    margin-bottom: 2rem;
+  }
 }
 
 #getStarted .bgHelper button {
@@ -403,6 +492,24 @@ footer .bgHelper {
       -ms-flex-align: center;
           align-items: center;
   gap: 2rem;
+}
+
+@media screen and (min-width: 30rem) {
+  footer .bgHelper {
+    padding: 2rem 3rem;
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  footer .bgHelper {
+    padding: 3rem 4rem;
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  footer .bgHelper {
+    padding: 3rem 5rem;
+  }
 }
 
 footer .bgHelper nav ul li {
@@ -466,7 +573,6 @@ footer .bgHelper form {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: mail;
-  width: 100%;
   position: relative;
 }
 
@@ -506,7 +612,7 @@ footer .bgHelper #socialMediaBox {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: socialMedia;
-  width: 100%;
+  width: 310px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -633,7 +739,50 @@ body {
   position: relative;
 }
 
-body #modalBodyBG {
+body::before, body::after {
+  position: absolute;
+  content: "";
+  background-image: url("../images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+body::before {
+  top: -3rem;
+  right: -5rem;
+  width: 25rem;
+  height: 25rem;
+  z-index: -1;
+}
+
+body::after {
+  top: 29rem;
+  right: -12rem;
+  width: 20rem;
+  height: 20rem;
+  z-index: -1;
+}
+
+body.overflowHidden {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 40rem) {
+  body::before {
+    top: -3rem;
+    right: -2rem;
+    width: 35rem;
+    height: 35rem;
+  }
+  body::after {
+    top: 33rem;
+    right: -8rem;
+    width: 25rem;
+    height: 25rem;
+  }
+}
+
+#modalBodyBG {
   position: absolute;
   content: "";
   top: 0;
@@ -646,17 +795,13 @@ body #modalBodyBG {
   z-index: 2;
 }
 
-body #modalBodyBG.openModalBG {
+#modalBodyBG.openModalBG {
   -webkit-animation: fadeInBodyBG 2s forwards;
           animation: fadeInBodyBG 2s forwards;
 }
 
-body #modalBodyBG.closeModalBG {
+#modalBodyBG.closeModalBG {
   -webkit-animation: fadeOutBodyBG 2s forwards;
           animation: fadeOutBodyBG 2s forwards;
-}
-
-body.overflowHidden {
-  overflow: hidden;
 }
 /*# sourceMappingURL=main.css.map */
