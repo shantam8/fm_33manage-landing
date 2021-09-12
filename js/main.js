@@ -97,6 +97,7 @@ function submitMail(event) {
 
 function handleWindowResize() {
   if (window.screen.width >= 960) {
+    console.log(window.screen.width);
     clearInterval(testimonialMobileSliderInterval);
     for (let i = 0; i < testimonials.length; i++) {
       testimonials[i].classList.remove("displayNone");
