@@ -11,6 +11,13 @@
     padding: 3rem 5rem;
   }
 
+  @media screen and (min-width: 75rem) {
+    width: 64rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+
 }
 
 @mixin btnGeneralStyle($color: white, $bgColor: $brightRed) {

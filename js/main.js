@@ -25,6 +25,7 @@ function toggleMobileMenu() {
 
     btnToggleMobileMenu.style.backgroundImage =
       "url('./images/icon-hamburger.svg')";
+    btnToggleMobileMenu.setAttribute("aria-label", "open menu");
     mobileMenuIsOpen = !mobileMenuIsOpen;
     setMenuDisplayNoneAfterAnimation();
     console.log("closing  " + mobileMenuIsOpen);
@@ -40,6 +41,8 @@ function toggleMobileMenu() {
 
     btnToggleMobileMenu.style.backgroundImage =
       "url('./images/icon-close.svg')";
+    btnToggleMobileMenu.setAttribute("aria-label", "close menu");
+
     mobileMenuIsOpen = !mobileMenuIsOpen;
     console.log("opening  " + mobileMenuIsOpen);
   }
@@ -67,7 +70,7 @@ function startTestimonialSlider(startElement = 0) {
 
 function selectTestimonial(counter) {
   for (let i = 0; i < testimonials.length; i++) {
-    if (i != counter) {
+    if (window.screen.width < 960 && i != counter) {
       testimonials[i].classList.add("displayNone");
       testimonialNavElement[i].classList.remove("bgColorBrightRed");
     } else {
@@ -95,6 +98,23 @@ function submitMail(event) {
   }
 }
 
+function handleWindowResize(event) {
+  if (window.screen.width >= 960) {
+    clearInterval(testimonialSliderInterval);
+
+    console.log(window.screen.width);
+
+    for (let i = 0; i < testimonials.length; i++) {
+      testimonials[i].classList.remove("displayNone");
+    }
+
+    mobileMenuIsOpen = false;
+    toggleMobileMenu();
+  } else {
+    selectTestimonial(0);
+  }
+}
+
 function init() {
   console.log("Hi");
   btnToggleMobileMenu.addEventListener("click", toggleMobileMenu);
@@ -105,6 +125,7 @@ function init() {
   for (let i = 0; i < testimonialNavBubbles.length; i++) {
     testimonialNavBubbles[i].addEventListener("click", switchTestimonial);
   }
+  window.addEventListener("resize", handleWindowResize);
 }
 
 window.onload = init;

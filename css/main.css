@@ -118,6 +118,174 @@
   }
 }
 
+@-webkit-keyframes sliderSmallDesktop {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  20% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  40% {
+    -webkit-transform: translateX(-380px);
+            transform: translateX(-380px);
+  }
+  60% {
+    -webkit-transform: translateX(-380px);
+            transform: translateX(-380px);
+  }
+  80% {
+    -webkit-transform: translateX(-770px);
+            transform: translateX(-770px);
+  }
+  100% {
+    -webkit-transform: translateX(-770px);
+            transform: translateX(-770px);
+  }
+}
+
+@keyframes sliderSmallDesktop {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  20% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  40% {
+    -webkit-transform: translateX(-380px);
+            transform: translateX(-380px);
+  }
+  60% {
+    -webkit-transform: translateX(-380px);
+            transform: translateX(-380px);
+  }
+  80% {
+    -webkit-transform: translateX(-770px);
+            transform: translateX(-770px);
+  }
+  100% {
+    -webkit-transform: translateX(-770px);
+            transform: translateX(-770px);
+  }
+}
+
+@-webkit-keyframes sliderMediumDesktop {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  30% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  70% {
+    -webkit-transform: translateX(-610px);
+            transform: translateX(-610px);
+  }
+  100% {
+    -webkit-transform: translateX(-610px);
+            transform: translateX(-610px);
+  }
+}
+
+@keyframes sliderMediumDesktop {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  30% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  70% {
+    -webkit-transform: translateX(-610px);
+            transform: translateX(-610px);
+  }
+  100% {
+    -webkit-transform: translateX(-610px);
+            transform: translateX(-610px);
+  }
+}
+
+@-webkit-keyframes sliderLargeDesktop {
+  0% {
+    -webkit-transform: translateX(-140px);
+            transform: translateX(-140px);
+  }
+  30% {
+    -webkit-transform: translateX(-140px);
+            transform: translateX(-140px);
+  }
+  70% {
+    -webkit-transform: translateX(-560px);
+            transform: translateX(-560px);
+  }
+  100% {
+    -webkit-transform: translateX(-560px);
+            transform: translateX(-560px);
+  }
+}
+
+@keyframes sliderLargeDesktop {
+  0% {
+    -webkit-transform: translateX(-140px);
+            transform: translateX(-140px);
+  }
+  30% {
+    -webkit-transform: translateX(-140px);
+            transform: translateX(-140px);
+  }
+  70% {
+    -webkit-transform: translateX(-560px);
+            transform: translateX(-560px);
+  }
+  100% {
+    -webkit-transform: translateX(-560px);
+            transform: translateX(-560px);
+  }
+}
+
+@-webkit-keyframes sliderXLargeDesktop {
+  0% {
+    -webkit-transform: translateX(-135px);
+            transform: translateX(-135px);
+  }
+  30% {
+    -webkit-transform: translateX(-135px);
+            transform: translateX(-135px);
+  }
+  70% {
+    -webkit-transform: translateX(-570px);
+            transform: translateX(-570px);
+  }
+  100% {
+    -webkit-transform: translateX(-570px);
+            transform: translateX(-570px);
+  }
+}
+
+@keyframes sliderXLargeDesktop {
+  0% {
+    -webkit-transform: translateX(-135px);
+            transform: translateX(-135px);
+  }
+  30% {
+    -webkit-transform: translateX(-135px);
+            transform: translateX(-135px);
+  }
+  70% {
+    -webkit-transform: translateX(-570px);
+            transform: translateX(-570px);
+  }
+  100% {
+    -webkit-transform: translateX(-570px);
+            transform: translateX(-570px);
+  }
+}
+
 header .bgHelper {
   padding: 2rem;
   display: -webkit-box;
@@ -126,9 +294,9 @@ header .bgHelper {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: middle;
-      -ms-flex-align: middle;
-          align-items: middle;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 
@@ -150,9 +318,22 @@ header .bgHelper {
   }
 }
 
+@media screen and (min-width: 75rem) {
+  header .bgHelper {
+    width: 64rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+}
+
 header .bgHelper .logo {
   position: relative;
   z-index: 10;
+}
+
+header .bgHelper .logo img {
+  vertical-align: middle;
 }
 
 header .bgHelper #btnMobileMenu {
@@ -166,6 +347,12 @@ header .bgHelper #btnMobileMenu {
   border: none;
 }
 
+@media screen and (min-width: 60rem) {
+  header .bgHelper #btnMobileMenu {
+    display: none;
+  }
+}
+
 header .bgHelper nav {
   position: absolute;
   top: 7rem;
@@ -177,11 +364,35 @@ header .bgHelper nav {
   z-index: 10;
 }
 
+@media screen and (min-width: 60rem) {
+  header .bgHelper nav {
+    display: initial;
+    position: static;
+    margin: 0;
+    padding: 0;
+    background-color: unset;
+  }
+  header .bgHelper nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+  }
+}
+
 header .bgHelper nav li {
   margin: 1rem 0;
   padding: 1rem;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  border-radius: 12px;
+}
+
+@media screen and (min-width: 60rem) {
+  header .bgHelper nav li {
+    margin: 0;
+    padding: 0.5rem;
+  }
 }
 
 header .bgHelper nav li a {
@@ -213,6 +424,12 @@ header .bgHelper nav.open {
 
 header .bgHelper .btnGeneralStyle {
   display: none;
+}
+
+@media screen and (min-width: 60rem) {
+  header .bgHelper .btnGeneralStyle {
+    display: block;
+  }
 }
 
 #intro .bgHelper {
@@ -251,6 +468,26 @@ header .bgHelper .btnGeneralStyle {
   }
 }
 
+@media screen and (min-width: 75rem) {
+  #intro .bgHelper {
+    width: 64rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  #intro .bgHelper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    text-align: left;
+    gap: 1rem;
+  }
+}
+
 #intro .bgHelper .imageBox {
   width: 100%;
 }
@@ -268,21 +505,58 @@ header .bgHelper .btnGeneralStyle {
   margin-bottom: 2rem;
 }
 
+@media screen and (min-width: 50rem) {
+  #intro .bgHelper p {
+    margin: 2rem 0 3rem 0;
+    padding-right: 8rem;
+  }
+}
+
 #manage .bgHelper {
+  padding: 2rem;
   padding-top: 2rem;
+  padding-bottom: 0;
+}
+
+@media screen and (min-width: 30rem) {
+  #manage .bgHelper {
+    padding: 2rem 3rem;
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  #manage .bgHelper {
+    padding: 3rem 4rem;
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  #manage .bgHelper {
+    padding: 3rem 5rem;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  #manage .bgHelper {
+    width: 64rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  #manage .bgHelper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 2rem;
+  }
 }
 
 #manage .bgHelper .titleBox {
   padding: 2rem;
   text-align: center;
-}
-
-#manage .bgHelper .titleBox h2 {
-  padding: 0 2rem;
-}
-
-#manage .bgHelper .titleBox p {
-  margin-top: 0.5rem;
 }
 
 @media screen and (min-width: 30rem) {
@@ -292,14 +566,57 @@ header .bgHelper .btnGeneralStyle {
   }
 }
 
+@media screen and (min-width: 60rem) {
+  #manage .bgHelper .titleBox {
+    text-align: left;
+    padding: 0;
+  }
+}
+
+#manage .bgHelper .titleBox h2 {
+  padding: 0 2rem;
+}
+
+@media screen and (min-width: 60rem) {
+  #manage .bgHelper .titleBox h2 {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+}
+
+#manage .bgHelper .titleBox p {
+  margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 60rem) {
+  #manage .bgHelper .titleBox p {
+    padding-right: 4rem;
+  }
+}
+
 #manage .bgHelper .itemBox {
   position: relative;
-  padding: 1rem;
+}
+
+@media screen and (min-width: 60rem) {
+  #manage .bgHelper .itemBox {
+    padding: 0;
+  }
 }
 
 #manage .bgHelper .itemBox p {
   margin-top: 1rem;
   margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 60rem) {
+  #manage .bgHelper .itemBox p {
+    padding-left: 5rem;
+  }
+}
+
+#manage .bgHelper .itemBox p:last-of-type {
+  margin-bottom: 0;
 }
 
 #manage .bgHelper .itemBox .itemNr {
@@ -324,17 +641,12 @@ header .bgHelper .btnGeneralStyle {
   font-size: 1rem;
 }
 
-@media screen and (min-width: 30rem) {
-  #manage .bgHelper {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-@media screen and (min-width: 40rem) {
-  #manage .bgHelper {
-    padding-left: 3rem;
-    padding-right: 3rem;
+@media screen and (min-width: 60rem) {
+  #manage .bgHelper .itemBox h3 {
+    background-color: unset;
+    width: unset;
+    margin-left: 0;
+    padding-left: 5rem;
   }
 }
 
@@ -361,6 +673,61 @@ header .bgHelper .btnGeneralStyle {
   }
 }
 
+@media screen and (min-width: 75rem) {
+  #testimonials .bgHelper {
+    width: 64rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  #testimonials .bgHelper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  #testimonials .bgHelper #testimonialBox {
+    width: 1730px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-animation: sliderSmallDesktop 20s alternate 5s infinite;
+            animation: sliderSmallDesktop 20s alternate 5s infinite;
+  }
+}
+
+@media screen and (min-width: 70rem) {
+  #testimonials .bgHelper #testimonialBox {
+    -webkit-animation: sliderMediumDesktop 20s alternate 5s infinite;
+            animation: sliderMediumDesktop 20s alternate 5s infinite;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  #testimonials .bgHelper #testimonialBox {
+    -webkit-transform: translateX(-140px);
+            transform: translateX(-140px);
+    -webkit-animation: sliderLargeDesktop 20s alternate 5s infinite;
+            animation: sliderLargeDesktop 20s alternate 5s infinite;
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  #testimonials .bgHelper #testimonialBox {
+    -webkit-transform: translateX(-135px);
+            transform: translateX(-135px);
+    -webkit-animation: sliderXLargeDesktop 20s alternate 5s infinite;
+            animation: sliderXLargeDesktop 20s alternate 5s infinite;
+  }
+}
+
 #testimonials .bgHelper h2 {
   margin-bottom: 3rem;
 }
@@ -374,6 +741,15 @@ header .bgHelper .btnGeneralStyle {
   padding: 0 1rem;
   -webkit-animation: fadeIn 2s forwards ease-in-out;
           animation: fadeIn 2s forwards ease-in-out;
+}
+
+@media screen and (min-width: 60rem) {
+  #testimonials .bgHelper .card {
+    width: 400px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 260px;
+  }
 }
 
 #testimonials .bgHelper .card .avatar {
@@ -393,7 +769,12 @@ header .bgHelper .btnGeneralStyle {
 
 #testimonials .bgHelper #testimonialNavBlock {
   margin-top: 1.5rem;
-  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 60rem) {
+  #testimonials .bgHelper #testimonialNavBlock {
+    display: none;
+  }
 }
 
 #testimonials .bgHelper #testimonialNavBlock ul li {
@@ -413,6 +794,7 @@ header .bgHelper .btnGeneralStyle {
 }
 
 #testimonials .bgHelper button {
+  margin-top: 3rem;
   margin-bottom: 2rem;
 }
 
@@ -421,6 +803,12 @@ header .bgHelper .btnGeneralStyle {
   background-image: url("../images/bg-simplify-section-mobile.svg");
   background-repeat: no-repeat;
   background-position: left center;
+}
+
+@media screen and (min-width: 60rem) {
+  #getStarted {
+    background-image: url("../images/bg-simplify-section-desktop.svg");
+  }
 }
 
 #getStarted .bgHelper {
@@ -434,6 +822,30 @@ header .bgHelper .btnGeneralStyle {
   }
 }
 
+@media screen and (min-width: 60rem) {
+  #getStarted .bgHelper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 3rem 5rem;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  #getStarted .bgHelper {
+    width: 64rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+}
+
 #getStarted .bgHelper h1 {
   padding: 0 2rem;
   color: white;
@@ -443,6 +855,15 @@ header .bgHelper .btnGeneralStyle {
 @media screen and (min-width: 40rem) {
   #getStarted .bgHelper h1 {
     margin-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  #getStarted .bgHelper h1 {
+    margin-bottom: 0;
+    padding: 0;
+    width: 27rem;
+    text-align: left;
   }
 }
 
@@ -472,6 +893,12 @@ header .bgHelper .btnGeneralStyle {
   color: #334075;
   -webkit-box-shadow: 1px 1px 15px 5px white;
           box-shadow: 1px 1px 15px 5px white;
+}
+
+@media screen and (min-width: 60rem) {
+  #getStarted .bgHelper button {
+    margin-top: 0;
+  }
 }
 
 footer {
@@ -512,6 +939,29 @@ footer .bgHelper {
   }
 }
 
+@media screen and (min-width: 75rem) {
+  footer .bgHelper {
+    width: 64rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  footer .bgHelper {
+    -ms-grid-columns: 1.5fr 1fr 1fr 315px;
+        grid-template-columns: 1.5fr 1fr 1fr 315px;
+    -ms-grid-rows: auto 1fr auto;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: "logo navbar1 navbar2 mail" ". navbar1 navbar2 ." "socialMedia navbar1 navbar2 copyright";
+    gap: 1rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 footer .bgHelper nav ul li {
   padding: 0.3rem 0;
   -webkit-transition: all 0.2s ease-in-out;
@@ -534,6 +984,12 @@ footer .bgHelper nav ul li:active svg path {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   fill: #f25f3a;
+}
+
+@media screen and (min-width: 60rem) {
+  footer .bgHelper nav ul li {
+    padding-top: 0;
+  }
 }
 
 footer .bgHelper nav ul li a {
@@ -568,12 +1024,26 @@ footer .bgHelper #logo #textColor {
   fill: white;
 }
 
+@media screen and (min-width: 60rem) {
+  footer .bgHelper #logo {
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+}
+
 footer .bgHelper form {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: mail;
   position: relative;
+}
+
+@media screen and (min-width: 60rem) {
+  footer .bgHelper form {
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
 }
 
 footer .bgHelper form #inputBoxMail {
@@ -624,6 +1094,14 @@ footer .bgHelper #socialMediaBox {
           align-items: center;
 }
 
+@media screen and (min-width: 60rem) {
+  footer .bgHelper #socialMediaBox {
+    width: 100%;
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+}
+
 footer .bgHelper #socialMediaBox a {
   width: 30px;
   height: 30px;
@@ -659,6 +1137,13 @@ footer .bgHelper #copyright {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: copyright;
+}
+
+@media screen and (min-width: 60rem) {
+  footer .bgHelper #copyright {
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
 }
 
 * {
@@ -737,6 +1222,7 @@ ul a {
 
 body {
   position: relative;
+  overflow-x: hidden;
 }
 
 body::before, body::after {
@@ -779,6 +1265,52 @@ body.overflowHidden {
     right: -8rem;
     width: 25rem;
     height: 25rem;
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  body::before {
+    top: -3rem;
+    right: -2rem;
+    width: 35rem;
+    height: 35rem;
+  }
+  body::after {
+    background-image: none;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  body::after {
+    top: 56rem;
+    left: -17rem;
+    width: 35rem;
+    height: 35rem;
+    background-image: url("../images/bg-tablet-pattern.svg");
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  body::before {
+    top: -2rem;
+    right: -4rem;
+    width: 40rem;
+    height: 40rem;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  body::before {
+    top: -3rem;
+    right: -3rem;
+    width: 42rem;
+    height: 42rem;
+  }
+  body::after {
+    top: 57rem;
+    left: -13rem;
+    width: 35rem;
+    height: 35rem;
   }
 }
 

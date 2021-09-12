@@ -4,29 +4,57 @@
   background-repeat: no-repeat;
   background-position: left center;
 
+  @media screen and (min-width: 60rem) {
+    background-image: url("../images/bg-simplify-section-desktop.svg");
+  }
+
   .bgHelper {
     //@include sectionPadding;
     text-align: center;
     padding: 6.5rem 0;
 
-    @media screen and (min-width:40rem) {
+    @media screen and (min-width: 40rem) {
       padding: 5rem 0;
     }
-   
+
+    @media screen and (min-width: 60rem) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3rem 5rem;
+    }
+
+    @media screen and (min-width: 75rem) {
+      width: 64rem;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0 auto;
+    }
+
     h1 {
-        padding: 0 2rem;
+      padding: 0 2rem;
       color: white;
       font-size: 2.3rem;
-      @media screen and (min-width:40rem) {
+      @media screen and (min-width: 40rem) {
         margin-bottom: 2rem;
+      }
+
+      @media screen and (min-width: 60rem) {
+        margin-bottom: 0;
+        padding: 0;
+        width: 27rem;
+        text-align: left;
       }
     }
 
     button {
-        margin-top: 2rem;
+      margin-top: 2rem;
 
-        @include btnGeneralStyle($brightRed, white)
+      @include btnGeneralStyle($brightRed, white);
 
+      @media screen and (min-width: 60rem) {
+        margin-top: 0;
+      }
     }
   }
 }

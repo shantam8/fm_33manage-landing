@@ -60,6 +60,7 @@ ul {
 
 body {
   position: relative;
+  overflow-x: hidden;
 
   &::before,
   &::after {
@@ -102,6 +103,56 @@ body {
       right: -8rem;
       width: 25rem;
       height: 25rem;
+    }
+  }
+
+  @media screen and (min-width: 50rem) {
+    &::before {
+      top: -3rem;
+      right: -2rem;
+      width: 35rem;
+      height: 35rem;
+    }
+
+    &::after {
+      background-image: none;
+    }
+  }
+
+  @media screen and (min-width: 60rem) {
+    &::after {
+      top: 56rem;
+      left: -17rem;
+      width: 35rem;
+      height: 35rem;
+      background-image: url("../images/bg-tablet-pattern.svg");
+    }
+  }
+
+  @media screen and (min-width: 64rem) {
+    &::before {
+      top: -2rem;
+      right: -4rem;
+      width: 40rem;
+      height: 40rem;
+    }
+
+   
+  }
+
+  @media screen and (min-width: 75rem) {
+    &::before {
+      top: -3rem;
+      right: -3rem;
+      width: 42rem;
+      height: 42rem;
+    }
+
+    &::after {
+      top: 57rem;
+      left: -13rem;
+      width: 35rem;
+      height: 35rem;
     }
   }
 }

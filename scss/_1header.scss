@@ -3,12 +3,16 @@ header {
     @include sectionPadding;
     display: flex;
     justify-content: space-between;
-    align-items: middle;
+    align-items: center;
     position: relative;
 
     .logo {
       position: relative;
       z-index: 10;
+
+      img {
+        vertical-align: middle;
+      }
     }
 
     #btnMobileMenu {
@@ -20,6 +24,10 @@ header {
       background-size: cover;
       z-index: 10;
       border: none;
+
+      @media screen and (min-width: 60rem) {
+        display: none;
+      }
     }
 
     nav {
@@ -32,10 +40,30 @@ header {
       border-radius: 4px;
       z-index: 10;
 
+      @media screen and (min-width: 60rem) {
+        display: initial;
+        position: static;
+        margin: 0;
+        padding: 0;
+        background-color: unset;
+
+        ul {
+          display: flex;
+          gap: 1rem;
+        }
+      }
+
       li {
         margin: 1rem 0;
         padding: 1rem;
         transition: all 0.3s ease-in-out;
+        border-radius: 12px;
+
+        @media screen and (min-width: 60rem) {
+          margin: 0;
+          padding: 0.5rem;
+        }
+
         a {
           display: inline-block;
           height: 100%;
@@ -66,6 +94,10 @@ header {
 
     .btnGeneralStyle {
       display: none;
+
+      @media screen and (min-width: 60rem) {
+        display: block;
+      }
     }
   }
 }

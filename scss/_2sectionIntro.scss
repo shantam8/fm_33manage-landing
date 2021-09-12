@@ -8,6 +8,12 @@
     justify-content: center;
     align-items: center;
 
+    @media screen and (min-width: 50rem) {
+      flex-direction: row-reverse;
+      text-align: left;
+      gap: 1rem;
+    }
+
     .imageBox {
       width: 100%;
       img {
@@ -17,12 +23,16 @@
 
     h1 {
       font-size: 2.3rem;
-      
     }
 
     p {
       margin-top: 0.5rem;
       margin-bottom: 2rem;
+
+      @media screen and (min-width: 50rem) {
+        margin: 2rem 0 3rem 0;
+        padding-right: 8rem;
+      }
     }
   }
 }
