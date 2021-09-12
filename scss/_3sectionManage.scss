@@ -5,101 +5,91 @@
     padding-top: 2rem;
     padding-bottom: 0;
 
-    // @media screen and (min-width: 30rem) {
-    //   padding-left: 2rem;
-    //   padding-right: 2rem;
-    // }
-    // @media screen and (min-width: 40rem) {
-    //   padding-left: 3rem;
-    //   padding-right: 3rem;
-    // }
-
     @media screen and(min-width:60rem) {
       display: flex;
-      //padding: 3rem 5rem;
       gap: 2rem;
     }
+  }
 
-    .titleBox {
-      padding: 2rem;
-      text-align: center;
+  .titleBox {
+    padding: 2rem;
+    text-align: center;
 
-      @media screen and (min-width: 30rem) {
-        padding-left: 4rem;
-        padding-right: 4rem;
-      }
+    @media screen and (min-width: 30rem) {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+
+    @media screen and(min-width:60rem) {
+      padding: 0;
+      text-align: left;
+    }
+
+    p {
+      margin-top: 0.5rem;
 
       @media screen and(min-width:60rem) {
-        text-align: left;
-        padding: 0;
+        padding-right: 4rem;
       }
+    }
+  }
 
-      h2 {
-        padding: 0 2rem;
+  h2 {
+    padding: 0 2rem;
 
-        @media screen and(min-width:60rem) {
-          padding: 0;
-          padding-bottom: 1rem;
-        }
-      }
-      p {
-        margin-top: 0.5rem;
+    @media screen and(min-width:60rem) {
+      padding: 0;
+      padding-bottom: 1rem;
+    }
+  }
 
-        @media screen and(min-width:60rem) {
-          padding-right: 4rem;
-        }
+  .itemBox {
+    position: relative;
+
+    @media screen and (min-width: 60rem) {
+      padding: 0;
+    }
+
+    p {
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+
+      @media screen and (min-width: 60rem) {
+        padding-left: 5rem;
       }
     }
 
-    .itemBox {
-      position: relative;
-     // padding: 1rem;
+    p:last-of-type {
+      margin-bottom: 0;
+    }
 
-      @media screen and (min-width: 60rem) {
-        padding: 0;
-      }
+    .itemNr {
+      display: inline-block;
+      position: absolute;
+      margin: 0;
+      padding: 0.5rem 1.5rem;
+      border-radius: 32px;
+      background-color: $brightRed;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+    }
+  }
 
-      p {
-        margin-top: 1rem;
-        margin-bottom: 3rem;
+  h3 {
+    width: 100vw;
+    display: inline-block;
+    margin-left: 1rem;
+    padding: 0.5rem 0 0.5rem 4rem;
+    background-color: $veryPaleRed;
+    font-size: 1rem;
 
-        @media screen and (min-width: 60rem) {
-          padding-left: 5rem;
-        }
-      }
-
-      p:last-of-type {
-        margin-bottom: 0;
-      }
-
-      .itemNr {
-        display: inline-block;
-        position: absolute;
-        margin: 0;
-        padding: 0.5rem 1.5rem;
-        color: white;
-        border-radius: 32px;
-        background-color: $brightRed;
-        text-align: center;
-        font-size: 1rem;
-        font-weight: 700;
-      }
-
-      h3 {
-        width: 100vw;
-        display: inline-block;
-        margin-left: 1rem;
-        padding: 0.5rem 0 0.5rem 4rem;
-        background-color: $veryPaleRed;
-        font-size: 1rem;
-
-        @media screen and (min-width: 60rem) {
-          background-color: unset;
-          width: unset;
-          margin-left: 0;
-          padding-left: 5rem;
-        }
-      }
+    @media screen and (min-width: 60rem) {
+      width: unset;
+      margin-left: 0;
+      padding-left: 5rem;
+      background-color: unset;
     }
   }
 }

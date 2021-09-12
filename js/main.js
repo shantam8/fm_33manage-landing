@@ -1,7 +1,7 @@
-let btnToggleMobileMenu = document.querySelector("#btnMobileMenu");
-let mainNavBar = document.querySelector("#mainNavBar");
 let body = document.querySelector("body");
 let modalBodyBG = document.querySelector("#modalBodyBG");
+let btnToggleMobileMenu = document.querySelector("#btnMobileMenu");
+let mainNavBar = document.querySelector("#mainNavBar");
 
 let testimonials = document.querySelector("#testimonialBox").children;
 let testimonialNavElement = document.querySelector("#testimonialNavBlock")
@@ -12,7 +12,7 @@ let inputBoxMail = document.querySelector("#inputBoxMail");
 let btnSubmitForm = document.querySelector("#btnSubmitForm");
 
 let mobileMenuIsOpen = false;
-let testimonialSliderInterval;
+let testimonialMobileSliderInterval;
 
 function toggleMobileMenu() {
   if (mobileMenuIsOpen) {
@@ -26,9 +26,9 @@ function toggleMobileMenu() {
     btnToggleMobileMenu.style.backgroundImage =
       "url('./images/icon-hamburger.svg')";
     btnToggleMobileMenu.setAttribute("aria-label", "open menu");
+
     mobileMenuIsOpen = !mobileMenuIsOpen;
     setMenuDisplayNoneAfterAnimation();
-    console.log("closing  " + mobileMenuIsOpen);
   } else {
     body.classList.add("overflowHidden");
     mainNavBar.classList.remove("displayNone");
@@ -44,7 +44,6 @@ function toggleMobileMenu() {
     btnToggleMobileMenu.setAttribute("aria-label", "close menu");
 
     mobileMenuIsOpen = !mobileMenuIsOpen;
-    console.log("opening  " + mobileMenuIsOpen);
   }
 }
 
@@ -59,13 +58,11 @@ function setMenuDisplayNoneAfterAnimation() {
 
 function startTestimonialSlider(startElement = 0) {
   let counter = startElement;
-
   selectTestimonial(counter);
-
-  // testimonialSliderInterval = setInterval(() => {
-  //   counter < testimonials.length - 1 ? counter++ : (counter = 0);
-  //   selectTestimonial(counter);
-  // }, 10000);
+  testimonialMobileSliderInterval = setInterval(() => {
+    counter < testimonials.length - 1 ? counter++ : (counter = 0);
+    selectTestimonial(counter);
+  }, 10000);
 }
 
 function selectTestimonial(counter) {
@@ -81,7 +78,7 @@ function selectTestimonial(counter) {
 }
 
 function switchTestimonial(event) {
-  clearInterval(testimonialSliderInterval);
+  clearInterval(testimonialMobileSliderInterval);
   startTestimonialSlider(event.target.value);
 }
 
@@ -98,34 +95,30 @@ function submitMail(event) {
   }
 }
 
-function handleWindowResize(event) {
+function handleWindowResize() {
   if (window.screen.width >= 960) {
-    clearInterval(testimonialSliderInterval);
-
-    console.log(window.screen.width);
-
+    clearInterval(testimonialMobileSliderInterval);
     for (let i = 0; i < testimonials.length; i++) {
       testimonials[i].classList.remove("displayNone");
     }
-
-    mobileMenuIsOpen = false;
-    toggleMobileMenu();
+    if (mobileMenuIsOpen) {
+      toggleMobileMenu();
+    }
   } else {
     selectTestimonial(0);
   }
 }
 
 function init() {
-  console.log("Hi");
   btnToggleMobileMenu.addEventListener("click", toggleMobileMenu);
-  startTestimonialSlider();
   btnSubmitForm.addEventListener("click", submitMail);
+  window.addEventListener("resize", handleWindowResize);
+  startTestimonialSlider();
 
   let testimonialNavBubbles = testimonialNavBlock.firstElementChild.children;
   for (let i = 0; i < testimonialNavBubbles.length; i++) {
     testimonialNavBubbles[i].addEventListener("click", switchTestimonial);
   }
-  window.addEventListener("resize", handleWindowResize);
 }
 
 window.onload = init;

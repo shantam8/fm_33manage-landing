@@ -9,52 +9,51 @@
   }
 
   .bgHelper {
-    //@include sectionPadding;
-    text-align: center;
     padding: 6.5rem 0;
+    text-align: center;
 
     @media screen and (min-width: 40rem) {
       padding: 5rem 0;
     }
 
     @media screen and (min-width: 60rem) {
+      padding: 3rem 5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 3rem 5rem;
     }
 
     @media screen and (min-width: 75rem) {
       width: 64rem;
+      margin: 0 auto;
       padding-left: 0;
       padding-right: 0;
-      margin: 0 auto;
+    }
+  }
+
+  h1 {
+    padding: 0 2rem;
+    font-size: 2.3rem;
+    color: white;
+
+    @media screen and (min-width: 40rem) {
+      margin-bottom: 2rem;
     }
 
-    h1 {
-      padding: 0 2rem;
-      color: white;
-      font-size: 2.3rem;
-      @media screen and (min-width: 40rem) {
-        margin-bottom: 2rem;
-      }
-
-      @media screen and (min-width: 60rem) {
-        margin-bottom: 0;
-        padding: 0;
-        width: 27rem;
-        text-align: left;
-      }
+    @media screen and (min-width: 60rem) {
+      width: 27rem;
+      margin-bottom: 0;
+      padding: 0;
+      text-align: left;
     }
+  }
 
-    button {
-      margin-top: 2rem;
+  button {
+    margin-top: 2rem;
+    @include btnGeneralStyle($brightRed, white);
 
-      @include btnGeneralStyle($brightRed, white);
-
-      @media screen and (min-width: 60rem) {
-        margin-top: 0;
-      }
+    @media screen and (min-width: 60rem) {
+      margin-top: 0;
     }
   }
 }

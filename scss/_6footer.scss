@@ -3,7 +3,6 @@ footer {
 
   .bgHelper {
     @include sectionPadding;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 2fr repeat(3, auto);
@@ -18,7 +17,7 @@ footer {
     gap: 2rem;
 
     @media screen and (min-width: 60rem) {
-      grid-template-columns: 1.5fr 1fr 1fr 315px; //auto 1fr 1fr auto;
+      grid-template-columns: 1.5fr 1fr 1fr 315px;
       grid-template-rows: auto 1fr auto;
       grid-template-areas:
         "logo navbar1 navbar2 mail"
@@ -27,118 +26,118 @@ footer {
       gap: 1rem;
       align-items: center;
     }
+  }
 
-    nav {
-      ul {
-        li {
-          padding: 0.3rem 0;
-          @include footerHoverEffects;
+  nav {
+    &:nth-child(1) {
+      grid-area: navbar1;
+    }
 
-          @media screen and (min-width: 60rem) {
-            padding-top: 0;
-          }
+    &:nth-child(2) {
+      grid-area: navbar2;
+      align-self: baseline;
+    }
 
-          a {
-            display: inline-block;
-            width: 100%;
-            height: 100%;
-            color: white;
-          }
-        }
-      }
+    li {
+      @include footerHoverEffects;
+      padding: 0.3rem 0;
 
-      &:nth-child(1) {
-        grid-area: navbar1;
-      }
-
-      &:nth-child(2) {
-        grid-area: navbar2;
-        align-self: baseline;
+      @media screen and (min-width: 60rem) {
+        padding-top: 0;
       }
     }
 
-    #logo {
-      grid-area: logo;
-      #textColor {
-        fill: white;
-      }
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      color: white;
+    }
+  }
 
-      @media screen and (min-width: 60rem) {
-        justify-self: start;
-      }
+  #logo {
+    grid-area: logo;
+
+    #textColor {
+      fill: white;
     }
 
-    form {
-      grid-area: mail;
-      position: relative;
+    @media screen and (min-width: 60rem) {
+      justify-self: start;
+    }
+  }
 
-      @media screen and (min-width: 60rem) {
-        justify-self: end;
-      }
+  form {
+    grid-area: mail;
+    position: relative;
 
-      #inputBoxMail {
-        padding: 0.8rem 1.4rem;
+    @media screen and (min-width: 60rem) {
+      justify-self: end;
+    }
+
+    &.valid #inputBoxMail {
+      outline: 2px solid lightgreen;
+    }
+
+    &.error #inputBoxMail {
+      outline: 2px solid $brightRed;
+      color: $brightRed;
+    }
+
+    &.error {
+      &::after {
+        position: absolute;
+        content: "Please enter a valid e-mail.";
+        top: 3rem;
+        left: 0;
+        padding-left: 1rem;
         font-size: 0.9rem;
-        border-radius: 26px;
-        border: none;
-        width: 14.9rem;
-      }
-
-      &.valid #inputBoxMail {
-        outline: 2px solid lightgreen;
-      }
-      &.error #inputBoxMail {
-        outline: 2px solid $brightRed;
         color: $brightRed;
       }
+    }
+  }
 
-      &.error {
-        &::after {
-          position: absolute;
-          content: "Please enter a valid e-mail.";
-          top: 3rem;
-          left: 0;
-          padding-left: 1rem;
-          font-size: 0.9rem;
-          color: $brightRed;
-        }
-      }
+  #inputBoxMail {
+    width: 14.9rem;
+    padding: 0.8rem 1.4rem;
+    border: none;
+    border-radius: 26px;
+    font-size: 0.9rem;
+  }
 
-      #btnSubmitForm {
-        padding: 0.8rem 1.5rem;
-      }
+  #btnSubmitForm {
+    padding: 0.8rem 1.5rem;
+  }
+
+  #socialMediaBox {
+    grid-area: socialMedia;
+    width: 310px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width: 60rem) {
+      width: 100%;
+      justify-self: start;
     }
 
-    #socialMediaBox {
-      grid-area: socialMedia;
-      width: 310px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    a {
+      @include footerHoverEffects;
+      width: 30px;
+      height: 30px;
 
-      @media screen and (min-width: 60rem) {
+      svg {
         width: 100%;
-        justify-self: start;
-      }
-
-      a {
-        width: 30px;
-        height: 30px;
-
-        @include footerHoverEffects;
-        svg {
-          width: 100%;
-          height: 100%;
-        }
+        height: 100%;
       }
     }
+  }
 
-    #copyright {
-      grid-area: copyright;
+  #copyright {
+    grid-area: copyright;
 
-      @media screen and (min-width: 60rem) {
-        justify-self: end;
-      }
+    @media screen and (min-width: 60rem) {
+      justify-self: end;
     }
   }
 }

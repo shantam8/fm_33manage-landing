@@ -33,6 +33,7 @@ h3 {
   color: $darkBlue;
   font-weight: 700;
 }
+
 h1 {
   line-height: 3rem;
 }
@@ -62,6 +63,10 @@ body {
   position: relative;
   overflow-x: hidden;
 
+  &.overflowHidden {
+    overflow: hidden;
+  }
+
   &::before,
   &::after {
     position: absolute;
@@ -86,13 +91,9 @@ body {
     height: 20rem;
     z-index: -1;
   }
-  &.overflowHidden {
-    overflow: hidden;
-  }
 
   @media screen and (min-width: 40rem) {
     &::before {
-      top: -3rem;
       right: -2rem;
       width: 35rem;
       height: 35rem;
@@ -107,13 +108,6 @@ body {
   }
 
   @media screen and (min-width: 50rem) {
-    &::before {
-      top: -3rem;
-      right: -2rem;
-      width: 35rem;
-      height: 35rem;
-    }
-
     &::after {
       background-image: none;
     }
@@ -136,8 +130,6 @@ body {
       width: 40rem;
       height: 40rem;
     }
-
-   
   }
 
   @media screen and (min-width: 75rem) {
@@ -151,8 +143,6 @@ body {
     &::after {
       top: 57rem;
       left: -13rem;
-      width: 35rem;
-      height: 35rem;
     }
   }
 }
