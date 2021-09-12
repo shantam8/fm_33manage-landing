@@ -67,7 +67,7 @@ function startTestimonialSlider(startElement = 0) {
 
 function selectTestimonial(counter) {
   for (let i = 0; i < testimonials.length; i++) {
-    if (window.screen.width < 960 && i != counter) {
+    if (window.innerWidth < 960 && i != counter) {
       testimonials[i].classList.add("displayNone");
       testimonialNavElement[i].classList.remove("bgColorBrightRed");
     } else {
@@ -78,8 +78,9 @@ function selectTestimonial(counter) {
 }
 
 function switchTestimonial(event) {
+  console.log("slider click");
   clearInterval(testimonialMobileSliderInterval);
-  startTestimonialSlider(event.target.value);
+  startTestimonialSlider(event.target.title);
 }
 
 function submitMail(event) {
@@ -96,8 +97,10 @@ function submitMail(event) {
 }
 
 function handleWindowResize() {
-  if (window.screen.width >= 960) {
-    console.log(window.screen.width);
+  console.log("small: " + window.innerWidth);
+
+  if (window.innerWidth >= 960) {
+    console.log(window.innerWidth);
     clearInterval(testimonialMobileSliderInterval);
     for (let i = 0; i < testimonials.length; i++) {
       testimonials[i].classList.remove("displayNone");
@@ -119,6 +122,7 @@ function init() {
   let testimonialNavBubbles = testimonialNavBlock.firstElementChild.children;
   for (let i = 0; i < testimonialNavBubbles.length; i++) {
     testimonialNavBubbles[i].addEventListener("click", switchTestimonial);
+  
   }
 }
 
